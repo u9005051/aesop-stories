@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊索寓言互動故事</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f5f5f5}
+.container{max-width:600px;margin:auto;padding:16px}
+.card{background:white;border-radius:12px;padding:16px;margin-bottom:16px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+button{padding:10px 16px;border:none;border-radius:8px;background:#4CAF50;color:white}
+.option{display:block;margin:8px 0;padding:10px;background:#eee;border-radius:8px;cursor:pointer}
+img{width:100%;border-radius:10px;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="container">
+<div id="app"></div>
+<button onclick="nextStory()">下一題</button>
+</div>
+
+<script>
+const stories = [
+{
+ title:"7. 農夫與蛇",
+ img:"https://picsum.photos/seed/snake/600/300",
+ text:"寒冷的冬天，一位農夫在路邊看到一條凍僵的蛇，心生憐憫，把牠放進懷裡取暖。蛇漸漸甦醒後，卻反過來咬了農夫一口。農夫臨死前說：我救了你，卻害了自己。",
+ q:"這故事告訴我們？",
+ options:["要善良","壞人難改","不要救人"],
+ answer:1
+},
+{
+ title:"8. 螞蟻與蚱蜢",
+ img:"https://picsum.photos/seed/ant/600/300",
+ text:"夏天時，螞蟻忙著搬運食物，蚱蜢卻整天唱歌玩樂。冬天來臨，蚱蜢沒有食物，只好向螞蟻求助。螞蟻告訴牠：你夏天不工作，冬天就該挨餓。",
+ q:"螞蟻成功原因？",
+ options:["運氣","勤勞準備","比較強"],
+ answer:1
+},
+{
+ title:"9. 金斧頭銀斧頭",
+ img:"https://picsum.photos/seed/axe/600/300",
+ text:"樵夫不小心把斧頭掉進河裡，神明幫他撿起金斧與銀斧，他誠實地說都不是自己的。神明被感動，把三把都給他。另一人模仿卻說謊，結果什麼都沒得到。",
+ q:"誠實的結果是？",
+ options:["失去斧頭","得到全部","被懲罰"],
+ answer:1
+},
+{
+ title:"10. 狗與影子",
+ img:"https://picsum.photos/seed/dog/600/300",
+ text:"一隻狗叼著肉過橋，看見水中影子，以為是另一塊更大的肉，張口去搶，結果原本的肉掉進水裡消失了。",
+ q:"為何失敗？",
+ options:["太慢","貪心","橋壞了"],
+ answer:1
+},
+{
+ title:"11. 狼與小羊",
+ img:"https://picsum.photos/seed/wolf/600/300",
+ text:"小羊在河邊喝水，狼想吃牠，便找各種理由指責小羊。無論小羊如何解釋，狼仍撲上去把牠吃掉。",
+ q:"故事重點？",
+ options:["小羊錯","強者欺弱","水太髒"],
+ answer:1
+},
+{
+ title:"12. 兩隻青蛙",
+ img:"https://picsum.photos/seed/frog/600/300",
+ text:"兩隻青蛙看到一口井，其中一隻想跳下去生活，另一隻提醒：如果水乾了就出不來了。",
+ q:"應該怎麼做？",
+ options:["衝動","深思熟慮","不管"],
+ answer:1
+},
+{
+ title:"13. 驢子與獅子皮",
+ img:"https://picsum.photos/seed/donkey/600/300",
+ text:"驢子披上獅子皮嚇跑動物，但當牠開口叫時，大家立刻知道牠只是驢子。",
+ q:"為何被識破？",
+ options:["跑太慢","聲音暴露","太小"],
+ answer:1
+},
+{
+ title:"14. 城市鼠與鄉下鼠",
+ img:"https://picsum.photos/seed/mouse/600/300",
+ text:"鄉下鼠到城市享受美食，但常被嚇得躲藏，最後決定回到簡單但安全的生活。",
+ q:"重點是？",
+ options:["吃得多","安全重要","城市好"],
+ answer:1
+},
+{
+ title:"15. 烏鴉與狐狸",
+ img:"https://picsum.photos/seed/crow/600/300",
+ text:"狐狸讚美烏鴉歌聲，讓牠開口唱歌，嘴裡的食物掉下來被狐狸吃掉。",
+ q:"狐狸用什麼？",
+ options:["力量","讚美","威脅"],
+ answer:1
+},
+{
+ title:"16. 老人與死神",
+ img:"https://picsum.photos/seed/old/600/300",
+ text:"老人抱怨生活辛苦呼喚死神，當死神真的出現時，他卻改口說只是請幫忙搬柴。",
+ q:"寓意？",
+ options:["愛抱怨","珍惜生命","想死"],
+ answer:1
+},
+{
+ title:"17. 馬與驢",
+ img:"https://picsum.photos/seed/horse/600/300",
+ text:"驢子負重過多請馬幫忙，馬拒絕。最後驢子倒下，馬反而要承擔全部重量。",
+ q:"教訓？",
+ options:["自私好","互相幫助","跑快"],
+ answer:1
+},
+{
+ title:"18. 獅子與狐狸",
+ img:"https://picsum.photos/seed/lion/600/300",
+ text:"狐狸看到洞口只有進去的腳印沒有出來的，判斷有危險，拒絕進入。",
+ q:"狐狸為何安全？",
+ options:["幸運","觀察力","跑快"],
+ answer:1
+},
+{
+ title:"19. 鷹與烏鴉",
+ img:"https://picsum.photos/seed/eagle/600/300",
+ text:"烏鴉模仿鷹抓羊，卻被困住無法飛走，最後被人抓住。",
+ q:"原因？",
+ options:["太慢","不自量力","風大"],
+ answer:1
+},
+{
+ title:"20. 牧羊人與狼",
+ img:"https://picsum.photos/seed/sheep/600/300",
+ text:"牧羊人養了一隻小狼，以為能馴服牠，結果長大後反而吃掉羊群。",
+ q:"寓意？",
+ options:["狼強","不要養壞人","羊弱"],
+ answer:1
+}
+];
+
+let index=0;
+function render(){
+ const s=stories[index];
+ document.getElementById("app").innerHTML=`
+ <div class='card'>
+ <h2>${s.title}</h2>
+ <img src='${s.img}'>
+ <p>${s.text}</p>
+ <p><b>${s.q}</b></p>
+ ${s.options.map((o,i)=>`<div class='option' onclick='check(${i})'>${o}</div>`).join("")}
+ <p id='result'></p>
+ </div>`;
+}
+
+function check(i){
+ const correct = stories[index].answer;
+ document.getElementById("result").innerText = i===correct?"✔ 正確":"✘ 錯誤";
+}
+
+function nextStory(){
+ index=(index+1)%stories.length;
+ render();
+}
+
+render();
+</script>
+</body>
+</html>
