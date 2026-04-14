@@ -25,28 +25,28 @@ img{width:100%;border-radius:10px;margin-bottom:10px}
 
 <script>
 const stories = [
-{title:"1. 狐狸與葡萄",img:"https://source.unsplash.com/600x300/?fox,grapes",text:"炎熱的午後，一隻飢餓的狐狸四處尋找食物。牠看到高高掛著的葡萄，晶瑩剔透，非常誘人。狐狸跳了又跳，用盡全力卻始終搆不到。試了很久後，牠筋疲力盡，只好放棄，轉身離開時還說：這些葡萄一定是酸的。",q:"狐狸為什麼說葡萄是酸的？",options:["真的酸","找藉口","不想吃"],answer:1},
-{title:"2. 龜兔賽跑",img:"https://source.unsplash.com/600x300/?turtle,rabbit",text:"兔子嘲笑烏龜走得慢，烏龜提出比賽。比賽開始後兔子很快領先，便在路邊休息睡覺。烏龜一步一步不停前進，最後在兔子醒來前抵達終點。",q:"烏龜贏的原因？",options:["跑很快","堅持","運氣"],answer:1},
-{title:"3. 狼來了",img:"https://source.unsplash.com/600x300/?wolf,shepherd",text:"牧童覺得無聊，多次大喊狼來了欺騙村民。後來真的有狼時，村民不再相信他，最後羊群被吃光。",q:"為什麼沒人幫忙？",options:["太遠","失去信任","懶"],answer:1},
-{title:"4. 獅子與老鼠",img:"https://source.unsplash.com/600x300/?lion,mouse",text:"獅子抓住老鼠後放了牠。後來獅子被網困住，老鼠咬斷繩子救了牠。",q:"寓意是？",options:["大最強","小也有用","不要幫人"],answer:1},
-{title:"5. 烏鴉喝水",img:"https://source.unsplash.com/600x300/?crow,water",text:"口渴的烏鴉看到瓶中水太低，於是投入石頭讓水位上升，成功喝水。",q:"成功原因？",options:["力氣","智慧","運氣"],answer:1},
-{title:"6. 北風與太陽",img:"https://source.unsplash.com/600x300/?sun,wind",text:"北風和太陽比賽讓人脫外套，北風吹得越大，人反而穿更緊；太陽溫暖照射，人主動脫下外套。",q:"誰贏？",options:["北風","太陽","平手"],answer:1},
+{title:"1. 狐狸與葡萄",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"炎熱的午後，一隻飢餓的狐狸四處尋找食物。牠看到高高掛著的葡萄，晶瑩剔透，非常誘人。狐狸跳了又跳，用盡全力卻始終搆不到。試了很久後，牠筋疲力盡，只好放棄，轉身離開時還說：這些葡萄一定是酸的。",q:"狐狸為什麼說葡萄是酸的？",options:["真的酸","找藉口","不想吃"],answer:1},
+{title:"2. 龜兔賽跑",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"兔子嘲笑烏龜走得慢，烏龜提出比賽。比賽開始後兔子很快領先，便在路邊休息睡覺。烏龜一步一步不停前進，最後在兔子醒來前抵達終點。",q:"烏龜贏的原因？",options:["跑很快","堅持","運氣"],answer:1},
+{title:"3. 狼來了",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"牧童覺得無聊，多次大喊狼來了欺騙村民。後來真的有狼時，村民不再相信他，最後羊群被吃光。",q:"為什麼沒人幫忙？",options:["太遠","失去信任","懶"],answer:1},
+{title:"4. 獅子與老鼠",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"獅子抓住老鼠後放了牠。後來獅子被網困住，老鼠咬斷繩子救了牠。",q:"寓意是？",options:["大最強","小也有用","不要幫人"],answer:1},
+{title:"5. 烏鴉喝水",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"口渴的烏鴉看到瓶中水太低，於是投入石頭讓水位上升，成功喝水。",q:"成功原因？",options:["力氣","智慧","運氣"],answer:1},
+{title:"6. 北風與太陽",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"北風和太陽比賽讓人脫外套，北風吹得越大，人反而穿更緊；太陽溫暖照射，人主動脫下外套。",q:"誰贏？",options:["北風","太陽","平手"],answer:1},
 
 // 7-20（保留你剛剛的完整版）
-{title:"7. 農夫與蛇",img:"https://source.unsplash.com/600x300/?snake,winter",text:"寒冬中農夫救蛇，蛇甦醒後反咬農夫，農夫後悔不已。",q:"寓意？",options:["善良","壞人難改","不要救人"],answer:1},
-{title:"8. 螞蟻與蚱蜢",img:"https://source.unsplash.com/600x300/?ant,grasshopper",text:"螞蟻夏天努力儲糧，蚱蜢玩樂，冬天挨餓。",q:"成功原因？",options:["運氣","準備","強"],answer:1},
-{title:"9. 金斧頭銀斧頭",img:"https://source.unsplash.com/600x300/?axe,river",text:"誠實樵夫得到三把斧頭，說謊的人一無所有。",q:"結果？",options:["失去","得到全部","懲罰"],answer:1},
-{title:"10. 狗與影子",img:"https://source.unsplash.com/600x300/?dog,water",text:"狗貪心想搶影子裡的肉，結果兩個都失去。",q:"原因？",options:["慢","貪心","橋壞"],answer:1},
-{title:"11. 狼與小羊",img:"https://source.unsplash.com/600x300/?wolf,lamb",text:"狼找藉口吃羊，顯示強者欺弱。",q:"重點？",options:["羊錯","強欺弱","水"],answer:1},
-{title:"12. 兩隻青蛙",img:"https://source.unsplash.com/600x300/?frog,well",text:"青蛙提醒不要衝動跳井，要考慮後果。",q:"應該？",options:["衝動","思考","不管"],answer:1},
-{title:"13. 驢子與獅子皮",img:"https://source.unsplash.com/600x300/?donkey,lion",text:"驢子假扮獅子，但聲音露餡。",q:"為何？",options:["慢","聲音","小"],answer:1},
-{title:"14. 城市鼠與鄉下鼠",img:"https://source.unsplash.com/600x300/?mouse,city",text:"城市生活富但危險，鄉下簡單安全。",q:"重點？",options:["吃","安全","城市"],answer:1},
-{title:"15. 烏鴉與狐狸",img:"https://source.unsplash.com/600x300/?crow,fox",text:"狐狸用讚美騙食物。",q:"方法？",options:["力","讚美","威脅"],answer:1},
-{title:"16. 老人與死神",img:"https://source.unsplash.com/600x300/?oldman,forest",text:"老人抱怨但其實不想死。",q:"寓意？",options:["抱怨","珍惜","想死"],answer:1},
-{title:"17. 馬與驢",img:"https://source.unsplash.com/600x300/?horse,donkey",text:"不幫忙反而承擔更多。",q:"教訓？",options:["自私","幫助","快"],answer:1},
-{title:"18. 獅子與狐狸",img:"https://source.unsplash.com/600x300/?lion,cave",text:"狐狸觀察腳印避免危險。",q:"原因？",options:["運氣","觀察","快"],answer:1},
-{title:"19. 鷹與烏鴉",img:"https://source.unsplash.com/600x300/?eagle,sheep",text:"模仿失敗因不自量力。",q:"原因？",options:["慢","不自量力","風"],answer:1},
-{title:"20. 牧羊人與狼",img:"https://source.unsplash.com/600x300/?wolf,sheep",text:"養狼反害自己。",q:"寓意？",options:["強","壞人","弱"],answer:1}
+{title:"7. 農夫與蛇",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"寒冬中農夫救蛇，蛇甦醒後反咬農夫，農夫後悔不已。",q:"寓意？",options:["善良","壞人難改","不要救人"],answer:1},
+{title:"8. 螞蟻與蚱蜢",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"螞蟻夏天努力儲糧，蚱蜢玩樂，冬天挨餓。",q:"成功原因？",options:["運氣","準備","強"],answer:1},
+{title:"9. 金斧頭銀斧頭",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"誠實樵夫得到三把斧頭，說謊的人一無所有。",q:"結果？",options:["失去","得到全部","懲罰"],answer:1},
+{title:"10. 狗與影子",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"狗貪心想搶影子裡的肉，結果兩個都失去。",q:"原因？",options:["慢","貪心","橋壞"],answer:1},
+{title:"11. 狼與小羊",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"狼找藉口吃羊，顯示強者欺弱。",q:"重點？",options:["羊錯","強欺弱","水"],answer:1},
+{title:"12. 兩隻青蛙",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"青蛙提醒不要衝動跳井，要考慮後果。",q:"應該？",options:["衝動","思考","不管"],answer:1},
+{title:"13. 驢子與獅子皮",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"驢子假扮獅子，但聲音露餡。",q:"為何？",options:["慢","聲音","小"],answer:1},
+{title:"14. 城市鼠與鄉下鼠",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"城市生活富但危險，鄉下簡單安全。",q:"重點？",options:["吃","安全","城市"],answer:1},
+{title:"15. 烏鴉與狐狸",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"狐狸用讚美騙食物。",q:"方法？",options:["力","讚美","威脅"],answer:1},
+{title:"16. 老人與死神",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"老人抱怨但其實不想死。",q:"寓意？",options:["抱怨","珍惜","想死"],answer:1},
+{title:"17. 馬與驢",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"不幫忙反而承擔更多。",q:"教訓？",options:["自私","幫助","快"],answer:1},
+{title:"18. 獅子與狐狸",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"狐狸觀察腳印避免危險。",q:"原因？",options:["運氣","觀察","快"],answer:1},
+{title:"19. 鷹與烏鴉",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"模仿失敗因不自量力。",q:"原因？",options:["慢","不自量力","風"],answer:1},
+{title:"20. 牧羊人與狼",img:"https://picsum.photos/seed/story$RANDOM/600/300",text:"養狼反害自己。",q:"寓意？",options:["強","壞人","弱"],answer:1}
 ];
 
 let index=0;
